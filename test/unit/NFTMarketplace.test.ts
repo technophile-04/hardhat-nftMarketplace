@@ -30,6 +30,15 @@ import { BasicNFT, NFTMarketplace } from '../../typechain-types';
                       'ItemListed'
                   );
               });
+              it('revert if the listing price is 0', async () => {
+                  const zeroPrice = ethers.utils.parseEther('0');
+                  await expect(
+                      nftMarketplace.listItem(basicNFT.address, TOKEN_ID, zeroPrice)
+                  ).to.revertedWithCustomError(
+                      nftMarketplace,
+                      'NFTMarketplace__PriceMustBeAboveZero'
+                  );
+              });
               it('only allow owner to list', async function () {
                   const accounts = await ethers.getSigners();
                   const player = accounts[1];
