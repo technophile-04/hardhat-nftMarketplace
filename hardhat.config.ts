@@ -26,6 +26,9 @@ const config: HardhatUserConfig = {
         hardhat: {
             chainId: 31337,
         },
+        localhost: {
+            chainId: 31337,
+        },
     },
     gasReporter: {
         enabled: process.env.REPORT_GAS !== undefined,

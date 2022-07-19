@@ -1,4 +1,11 @@
 {
+    "scripts": {
+        "mintNFT": "yarn hardhat run scripts/mint-list.ts --network localhost",
+        "cancelNFT": "yarn hardhat run scripts/cancel-item.ts --network localhost",
+        "buyNFT": "yarn hardhat run scripts/buy-item.ts  --network localhost",
+        "updateNFT": "yarn hardhat run scripts/updateNFT.ts --network localhost",
+        "mineBlock": "yarn hardhat run scripts/mineBlocks.ts --network localhost"
+    },
     "devDependencies": {
         "@ethersproject/abi": "^5.4.7",
         "@ethersproject/providers": "^5.4.7",
